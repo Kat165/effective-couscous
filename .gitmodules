@@ -1,3 +1,6 @@
 [submodule "webowka/webowka/webowka/webowka/lab8"]
 	path = webowka/webowka/webowka/webowka/lab8
 	url = https://github.com/Kat165/restaurant.git
+[submodule "Studio_projektowe/frontend"]
+	path = Studio_projektowe/frontend
+	url = https://github.com/Kat165/frontv2.git
