@@ -4,3 +4,6 @@
 [submodule "Studio_projektowe/frontend"]
 	path = Studio_projektowe/frontend
 	url = https://github.com/Kat165/frontv2.git
+[submodule "Studio_projektowe/backend"]
+	path = Studio_projektowe/backend
+	url = https://github.com/MStrzezon/network_simulator_backend.git
