@@ -1,0 +1,15 @@
+25 		# Population size
+10 		# Initial max depth of trees >=5
+3 		# Tournament size
+2 		# Pars to Crossover
+6 		# Programs to mutate
+0.1 		# Max execution time in seconds
+input.txt 	# default input filename
+expected.txt 	# defalut expected values filename
+calculate_score # default function name
+2 200 		# Stop type of condition and value
+- 		# type of condition 
+-	 	# value of condition
+-	 	# new input filename
+-	 	# new expected values filename
+-	 	# new evaluating function name

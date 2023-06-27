@@ -1,0 +1,1271 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> start
+Rule 1     start -> INSTRUCTIONS_SET
+Rule 2     INSTRUCTIONS_SET -> INSTRUCTION NL
+Rule 3     INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL
+Rule 4     INSTRUCTION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+Rule 5     INSTRUCTION -> IF_STATEMENT
+Rule 6     INSTRUCTION -> WHILE_STATEMENT
+Rule 7     INSTRUCTION -> OUTPUT ( EXPRESSION )
+Rule 8     LOGICALEXPRESSION -> TRUE
+Rule 9     LOGICALEXPRESSION -> FALSE
+Rule 10    LOGICALEXPRESSION -> TEXT
+Rule 11    LOGICALEXPRESSION -> INTNUMBER
+Rule 12    LOGICALEXPRESSION -> FLOATNUMBER
+Rule 13    LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+Rule 14    LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+Rule 15    LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+Rule 16    LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+Rule 17    WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+Rule 18    IF_STATEMENT -> IF IF_BODY
+Rule 19    IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+Rule 20    IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+Rule 21    IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+Rule 22    EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+Rule 23    EXPRESSION -> INTNUMBER
+Rule 24    EXPRESSION -> FLOATNUMBER
+Rule 25    EXPRESSION -> TEXT
+Rule 26    EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+Rule 27    EXPRESSION -> INPUT ( )
+Rule 28    add_indent -> <empty>
+Rule 29    remove_indent -> <empty>
+
+Terminals, with rules where they appear
+
+(                    : 4 7 13 14 15 16 22 26 27
+)                    : 4 7 13 14 15 16 22 26 27
+,                    : 4 4 13 13 14 14 15 15 16 16 22 22 26 26
+:                    : 17 19 20 21 21
+BLOCK_END            : 17 19 21
+CALCEXPR             : 22
+CALCLOGICALEXPR      : 13 14 15 16
+ELIF                 : 20
+ELSE                 : 21
+FALSE                : 9
+FLOATNUMBER          : 12 24
+IF                   : 18
+INPUT                : 27
+INSTR                : 4 26
+INTNUMBER            : 11 23
+NL                   : 2 3 17 19 20 21 21
+OUTPUT               : 7
+TEXT                 : 10 25
+TRUE                 : 8
+WHILE                : 17
+error                : 
+
+Nonterminals, with rules where they appear
+
+EXPRESSION           : 4 4 4 7 13 13 13 14 14 15 15 16 22 22 22 26 26 26
+IF_BODY              : 18 20
+IF_STATEMENT         : 5
+INSTRUCTION          : 2 3
+INSTRUCTIONS_SET     : 1 3 17 19 20 21 21
+LOGICALEXPRESSION    : 14 15 16 16 17 19 20 21
+WHILE_STATEMENT      : 6
+add_indent           : 17 19 20 21 21
+remove_indent        : 17 19 20 21 21
+start                : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . start
+    (1) start -> . INSTRUCTIONS_SET
+    (2) INSTRUCTIONS_SET -> . INSTRUCTION NL
+    (3) INSTRUCTIONS_SET -> . INSTRUCTIONS_SET INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    start                          shift and go to state 1
+    INSTRUCTIONS_SET               shift and go to state 2
+    INSTRUCTION                    shift and go to state 3
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 1
+
+    (0) S' -> start .
+
+
+
+state 2
+
+    (1) start -> INSTRUCTIONS_SET .
+    (3) INSTRUCTIONS_SET -> INSTRUCTIONS_SET . INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    $end            reduce using rule 1 (start -> INSTRUCTIONS_SET .)
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    INSTRUCTION                    shift and go to state 10
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 3
+
+    (2) INSTRUCTIONS_SET -> INSTRUCTION . NL
+
+    NL              shift and go to state 11
+
+
+state 4
+
+    (4) INSTRUCTION -> INSTR . ( EXPRESSION , EXPRESSION , EXPRESSION )
+
+    (               shift and go to state 12
+
+
+state 5
+
+    (5) INSTRUCTION -> IF_STATEMENT .
+
+    NL              reduce using rule 5 (INSTRUCTION -> IF_STATEMENT .)
+
+
+state 6
+
+    (6) INSTRUCTION -> WHILE_STATEMENT .
+
+    NL              reduce using rule 6 (INSTRUCTION -> WHILE_STATEMENT .)
+
+
+state 7
+
+    (7) INSTRUCTION -> OUTPUT . ( EXPRESSION )
+
+    (               shift and go to state 13
+
+
+state 8
+
+    (18) IF_STATEMENT -> IF . IF_BODY
+    (19) IF_BODY -> . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (20) IF_BODY -> . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+    (21) IF_BODY -> . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (8) LOGICALEXPRESSION -> . TRUE
+    (9) LOGICALEXPRESSION -> . FALSE
+    (10) LOGICALEXPRESSION -> . TEXT
+    (11) LOGICALEXPRESSION -> . INTNUMBER
+    (12) LOGICALEXPRESSION -> . FLOATNUMBER
+    (13) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    TRUE            shift and go to state 16
+    FALSE           shift and go to state 17
+    TEXT            shift and go to state 18
+    INTNUMBER       shift and go to state 19
+    FLOATNUMBER     shift and go to state 20
+    CALCLOGICALEXPR shift and go to state 21
+
+    IF_BODY                        shift and go to state 14
+    LOGICALEXPRESSION              shift and go to state 15
+
+state 9
+
+    (17) WHILE_STATEMENT -> WHILE . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (8) LOGICALEXPRESSION -> . TRUE
+    (9) LOGICALEXPRESSION -> . FALSE
+    (10) LOGICALEXPRESSION -> . TEXT
+    (11) LOGICALEXPRESSION -> . INTNUMBER
+    (12) LOGICALEXPRESSION -> . FLOATNUMBER
+    (13) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    TRUE            shift and go to state 16
+    FALSE           shift and go to state 17
+    TEXT            shift and go to state 18
+    INTNUMBER       shift and go to state 19
+    FLOATNUMBER     shift and go to state 20
+    CALCLOGICALEXPR shift and go to state 21
+
+    LOGICALEXPRESSION              shift and go to state 22
+
+state 10
+
+    (3) INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION . NL
+
+    NL              shift and go to state 23
+
+
+state 11
+
+    (2) INSTRUCTIONS_SET -> INSTRUCTION NL .
+
+    INSTR           reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    OUTPUT          reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    IF              reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    WHILE           reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    $end            reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    BLOCK_END       reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    ELIF            reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+    ELSE            reduce using rule 2 (INSTRUCTIONS_SET -> INSTRUCTION NL .)
+
+
+state 12
+
+    (4) INSTRUCTION -> INSTR ( . EXPRESSION , EXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 25
+
+state 13
+
+    (7) INSTRUCTION -> OUTPUT ( . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 31
+
+state 14
+
+    (18) IF_STATEMENT -> IF IF_BODY .
+
+    NL              reduce using rule 18 (IF_STATEMENT -> IF IF_BODY .)
+
+
+state 15
+
+    (19) IF_BODY -> LOGICALEXPRESSION . : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (20) IF_BODY -> LOGICALEXPRESSION . : add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+    (21) IF_BODY -> LOGICALEXPRESSION . : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    :               shift and go to state 32
+
+
+state 16
+
+    (8) LOGICALEXPRESSION -> TRUE .
+
+    :               reduce using rule 8 (LOGICALEXPRESSION -> TRUE .)
+    ,               reduce using rule 8 (LOGICALEXPRESSION -> TRUE .)
+
+
+state 17
+
+    (9) LOGICALEXPRESSION -> FALSE .
+
+    :               reduce using rule 9 (LOGICALEXPRESSION -> FALSE .)
+    ,               reduce using rule 9 (LOGICALEXPRESSION -> FALSE .)
+
+
+state 18
+
+    (10) LOGICALEXPRESSION -> TEXT .
+
+    :               reduce using rule 10 (LOGICALEXPRESSION -> TEXT .)
+
+
+state 19
+
+    (11) LOGICALEXPRESSION -> INTNUMBER .
+
+    :               reduce using rule 11 (LOGICALEXPRESSION -> INTNUMBER .)
+
+
+state 20
+
+    (12) LOGICALEXPRESSION -> FLOATNUMBER .
+
+    :               reduce using rule 12 (LOGICALEXPRESSION -> FLOATNUMBER .)
+
+
+state 21
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR . ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR . ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR . ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR . ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    (               shift and go to state 33
+
+
+state 22
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION . : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    :               shift and go to state 34
+
+
+state 23
+
+    (3) INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .
+
+    INSTR           reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    OUTPUT          reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    IF              reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    WHILE           reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    $end            reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    BLOCK_END       reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    ELIF            reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+    ELSE            reduce using rule 3 (INSTRUCTIONS_SET -> INSTRUCTIONS_SET INSTRUCTION NL .)
+
+
+state 24
+
+    (26) EXPRESSION -> INSTR . ( EXPRESSION , EXPRESSION , EXPRESSION )
+
+    (               shift and go to state 35
+
+
+state 25
+
+    (4) INSTRUCTION -> INSTR ( EXPRESSION . , EXPRESSION , EXPRESSION )
+
+    ,               shift and go to state 36
+
+
+state 26
+
+    (22) EXPRESSION -> CALCEXPR . ( EXPRESSION , EXPRESSION , EXPRESSION )
+
+    (               shift and go to state 37
+
+
+state 27
+
+    (23) EXPRESSION -> INTNUMBER .
+
+    ,               reduce using rule 23 (EXPRESSION -> INTNUMBER .)
+    )               reduce using rule 23 (EXPRESSION -> INTNUMBER .)
+
+
+state 28
+
+    (24) EXPRESSION -> FLOATNUMBER .
+
+    ,               reduce using rule 24 (EXPRESSION -> FLOATNUMBER .)
+    )               reduce using rule 24 (EXPRESSION -> FLOATNUMBER .)
+
+
+state 29
+
+    (25) EXPRESSION -> TEXT .
+
+    ,               reduce using rule 25 (EXPRESSION -> TEXT .)
+    )               reduce using rule 25 (EXPRESSION -> TEXT .)
+
+
+state 30
+
+    (27) EXPRESSION -> INPUT . ( )
+
+    (               shift and go to state 38
+
+
+state 31
+
+    (7) INSTRUCTION -> OUTPUT ( EXPRESSION . )
+
+    )               shift and go to state 39
+
+
+state 32
+
+    (19) IF_BODY -> LOGICALEXPRESSION : . add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (20) IF_BODY -> LOGICALEXPRESSION : . add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+    (21) IF_BODY -> LOGICALEXPRESSION : . add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (28) add_indent -> .
+
+    NL              reduce using rule 28 (add_indent -> .)
+
+    add_indent                     shift and go to state 40
+
+state 33
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( . EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( . LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( . EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( . LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+    (8) LOGICALEXPRESSION -> . TRUE
+    (9) LOGICALEXPRESSION -> . FALSE
+    (10) LOGICALEXPRESSION -> . TEXT
+    (11) LOGICALEXPRESSION -> . INTNUMBER
+    (12) LOGICALEXPRESSION -> . FLOATNUMBER
+    (13) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 43
+    FLOATNUMBER     shift and go to state 44
+    TEXT            shift and go to state 45
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+    TRUE            shift and go to state 16
+    FALSE           shift and go to state 17
+    CALCLOGICALEXPR shift and go to state 21
+
+    EXPRESSION                     shift and go to state 41
+    LOGICALEXPRESSION              shift and go to state 42
+
+state 34
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : . add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (28) add_indent -> .
+
+    NL              reduce using rule 28 (add_indent -> .)
+
+    add_indent                     shift and go to state 46
+
+state 35
+
+    (26) EXPRESSION -> INSTR ( . EXPRESSION , EXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 47
+
+state 36
+
+    (4) INSTRUCTION -> INSTR ( EXPRESSION , . EXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 48
+
+state 37
+
+    (22) EXPRESSION -> CALCEXPR ( . EXPRESSION , EXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 49
+
+state 38
+
+    (27) EXPRESSION -> INPUT ( . )
+
+    )               shift and go to state 50
+
+
+state 39
+
+    (7) INSTRUCTION -> OUTPUT ( EXPRESSION ) .
+
+    NL              reduce using rule 7 (INSTRUCTION -> OUTPUT ( EXPRESSION ) .)
+
+
+state 40
+
+    (19) IF_BODY -> LOGICALEXPRESSION : add_indent . NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (20) IF_BODY -> LOGICALEXPRESSION : add_indent . NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent . NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    NL              shift and go to state 51
+
+
+state 41
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION . , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION . , LOGICALEXPRESSION , EXPRESSION )
+
+    ,               shift and go to state 52
+
+
+state 42
+
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION . , EXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION . , LOGICALEXPRESSION , EXPRESSION )
+
+    ,               shift and go to state 53
+
+
+state 43
+
+    (23) EXPRESSION -> INTNUMBER .
+    (11) LOGICALEXPRESSION -> INTNUMBER .
+
+  ! reduce/reduce conflict for , resolved using rule 11 (LOGICALEXPRESSION -> INTNUMBER .)
+    ,               reduce using rule 11 (LOGICALEXPRESSION -> INTNUMBER .)
+
+  ! ,               [ reduce using rule 23 (EXPRESSION -> INTNUMBER .) ]
+
+
+state 44
+
+    (24) EXPRESSION -> FLOATNUMBER .
+    (12) LOGICALEXPRESSION -> FLOATNUMBER .
+
+  ! reduce/reduce conflict for , resolved using rule 12 (LOGICALEXPRESSION -> FLOATNUMBER .)
+    ,               reduce using rule 12 (LOGICALEXPRESSION -> FLOATNUMBER .)
+
+  ! ,               [ reduce using rule 24 (EXPRESSION -> FLOATNUMBER .) ]
+
+
+state 45
+
+    (25) EXPRESSION -> TEXT .
+    (10) LOGICALEXPRESSION -> TEXT .
+
+  ! reduce/reduce conflict for , resolved using rule 10 (LOGICALEXPRESSION -> TEXT .)
+    ,               reduce using rule 10 (LOGICALEXPRESSION -> TEXT .)
+
+  ! ,               [ reduce using rule 25 (EXPRESSION -> TEXT .) ]
+
+
+state 46
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent . NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    NL              shift and go to state 54
+
+
+state 47
+
+    (26) EXPRESSION -> INSTR ( EXPRESSION . , EXPRESSION , EXPRESSION )
+
+    ,               shift and go to state 55
+
+
+state 48
+
+    (4) INSTRUCTION -> INSTR ( EXPRESSION , EXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 56
+
+
+state 49
+
+    (22) EXPRESSION -> CALCEXPR ( EXPRESSION . , EXPRESSION , EXPRESSION )
+
+    ,               shift and go to state 57
+
+
+state 50
+
+    (27) EXPRESSION -> INPUT ( ) .
+
+    ,               reduce using rule 27 (EXPRESSION -> INPUT ( ) .)
+    )               reduce using rule 27 (EXPRESSION -> INPUT ( ) .)
+
+
+state 51
+
+    (19) IF_BODY -> LOGICALEXPRESSION : add_indent NL . INSTRUCTIONS_SET BLOCK_END remove_indent
+    (20) IF_BODY -> LOGICALEXPRESSION : add_indent NL . INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL . INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (2) INSTRUCTIONS_SET -> . INSTRUCTION NL
+    (3) INSTRUCTIONS_SET -> . INSTRUCTIONS_SET INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    INSTRUCTIONS_SET               shift and go to state 58
+    INSTRUCTION                    shift and go to state 3
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 52
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , . EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , . LOGICALEXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+    (8) LOGICALEXPRESSION -> . TRUE
+    (9) LOGICALEXPRESSION -> . FALSE
+    (10) LOGICALEXPRESSION -> . TEXT
+    (11) LOGICALEXPRESSION -> . INTNUMBER
+    (12) LOGICALEXPRESSION -> . FLOATNUMBER
+    (13) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 43
+    FLOATNUMBER     shift and go to state 44
+    TEXT            shift and go to state 45
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+    TRUE            shift and go to state 16
+    FALSE           shift and go to state 17
+    CALCLOGICALEXPR shift and go to state 21
+
+    EXPRESSION                     shift and go to state 59
+    LOGICALEXPRESSION              shift and go to state 60
+
+state 53
+
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , . EXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , . LOGICALEXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+    (8) LOGICALEXPRESSION -> . TRUE
+    (9) LOGICALEXPRESSION -> . FALSE
+    (10) LOGICALEXPRESSION -> . TEXT
+    (11) LOGICALEXPRESSION -> . INTNUMBER
+    (12) LOGICALEXPRESSION -> . FLOATNUMBER
+    (13) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 43
+    FLOATNUMBER     shift and go to state 44
+    TEXT            shift and go to state 45
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+    TRUE            shift and go to state 16
+    FALSE           shift and go to state 17
+    CALCLOGICALEXPR shift and go to state 21
+
+    LOGICALEXPRESSION              shift and go to state 61
+    EXPRESSION                     shift and go to state 62
+
+state 54
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent NL . INSTRUCTIONS_SET BLOCK_END remove_indent
+    (2) INSTRUCTIONS_SET -> . INSTRUCTION NL
+    (3) INSTRUCTIONS_SET -> . INSTRUCTIONS_SET INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    INSTRUCTIONS_SET               shift and go to state 63
+    INSTRUCTION                    shift and go to state 3
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 55
+
+    (26) EXPRESSION -> INSTR ( EXPRESSION , . EXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 64
+
+state 56
+
+    (4) INSTRUCTION -> INSTR ( EXPRESSION , EXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 65
+
+state 57
+
+    (22) EXPRESSION -> CALCEXPR ( EXPRESSION , . EXPRESSION , EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 66
+
+state 58
+
+    (19) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET . BLOCK_END remove_indent
+    (20) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET . remove_indent ELIF IF_BODY
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET . remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (3) INSTRUCTIONS_SET -> INSTRUCTIONS_SET . INSTRUCTION NL
+    (29) remove_indent -> .
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    BLOCK_END       shift and go to state 67
+    ELIF            reduce using rule 29 (remove_indent -> .)
+    ELSE            reduce using rule 29 (remove_indent -> .)
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    remove_indent                  shift and go to state 68
+    INSTRUCTION                    shift and go to state 10
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 59
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 69
+
+
+state 60
+
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 70
+
+
+state 61
+
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 71
+
+
+state 62
+
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 72
+
+
+state 63
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET . BLOCK_END remove_indent
+    (3) INSTRUCTIONS_SET -> INSTRUCTIONS_SET . INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    BLOCK_END       shift and go to state 73
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    INSTRUCTION                    shift and go to state 10
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 64
+
+    (26) EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 74
+
+
+state 65
+
+    (4) INSTRUCTION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 75
+
+
+state 66
+
+    (22) EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION . , EXPRESSION )
+
+    ,               shift and go to state 76
+
+
+state 67
+
+    (19) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END . remove_indent
+    (29) remove_indent -> .
+
+    NL              reduce using rule 29 (remove_indent -> .)
+
+    remove_indent                  shift and go to state 77
+
+state 68
+
+    (20) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent . ELIF IF_BODY
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent . ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    ELIF            shift and go to state 78
+    ELSE            shift and go to state 79
+
+
+state 69
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 80
+
+state 70
+
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 81
+
+state 71
+
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 82
+
+state 72
+
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 83
+
+state 73
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END . remove_indent
+    (29) remove_indent -> .
+
+    NL              reduce using rule 29 (remove_indent -> .)
+
+    remove_indent                  shift and go to state 84
+
+state 74
+
+    (26) EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 85
+
+state 75
+
+    (4) INSTRUCTION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION ) .
+
+    NL              reduce using rule 4 (INSTRUCTION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+
+
+state 76
+
+    (22) EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION , . EXPRESSION )
+    (22) EXPRESSION -> . CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (23) EXPRESSION -> . INTNUMBER
+    (24) EXPRESSION -> . FLOATNUMBER
+    (25) EXPRESSION -> . TEXT
+    (26) EXPRESSION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (27) EXPRESSION -> . INPUT ( )
+
+    CALCEXPR        shift and go to state 26
+    INTNUMBER       shift and go to state 27
+    FLOATNUMBER     shift and go to state 28
+    TEXT            shift and go to state 29
+    INSTR           shift and go to state 24
+    INPUT           shift and go to state 30
+
+    EXPRESSION                     shift and go to state 86
+
+state 77
+
+    (19) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent .
+
+    NL              reduce using rule 19 (IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent .)
+
+
+state 78
+
+    (20) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELIF . IF_BODY
+    (19) IF_BODY -> . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (20) IF_BODY -> . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY
+    (21) IF_BODY -> . LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (8) LOGICALEXPRESSION -> . TRUE
+    (9) LOGICALEXPRESSION -> . FALSE
+    (10) LOGICALEXPRESSION -> . TEXT
+    (11) LOGICALEXPRESSION -> . INTNUMBER
+    (12) LOGICALEXPRESSION -> . FLOATNUMBER
+    (13) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (14) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION )
+    (15) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+    (16) LOGICALEXPRESSION -> . CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION )
+
+    TRUE            shift and go to state 16
+    FALSE           shift and go to state 17
+    TEXT            shift and go to state 18
+    INTNUMBER       shift and go to state 19
+    FLOATNUMBER     shift and go to state 20
+    CALCLOGICALEXPR shift and go to state 21
+
+    LOGICALEXPRESSION              shift and go to state 15
+    IF_BODY                        shift and go to state 87
+
+state 79
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE . : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    :               shift and go to state 88
+
+
+state 80
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 89
+
+
+state 81
+
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 90
+
+
+state 82
+
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 91
+
+
+state 83
+
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 92
+
+
+state 84
+
+    (17) WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent .
+
+    NL              reduce using rule 17 (WHILE_STATEMENT -> WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent .)
+
+
+state 85
+
+    (26) EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 93
+
+
+state 86
+
+    (22) EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION . )
+
+    )               shift and go to state 94
+
+
+state 87
+
+    (20) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY .
+
+    NL              reduce using rule 20 (IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELIF IF_BODY .)
+
+
+state 88
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : . add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+    (28) add_indent -> .
+
+    NL              reduce using rule 28 (add_indent -> .)
+
+    add_indent                     shift and go to state 95
+
+state 89
+
+    (13) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION ) .
+
+    :               reduce using rule 13 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+    ,               reduce using rule 13 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+
+
+state 90
+
+    (15) LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION ) .
+
+    :               reduce using rule 15 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION ) .)
+    ,               reduce using rule 15 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( EXPRESSION , LOGICALEXPRESSION , EXPRESSION ) .)
+
+
+state 91
+
+    (16) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION ) .
+
+    :               reduce using rule 16 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION ) .)
+    ,               reduce using rule 16 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , LOGICALEXPRESSION , EXPRESSION ) .)
+
+
+state 92
+
+    (14) LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION ) .
+
+    :               reduce using rule 14 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION ) .)
+    ,               reduce using rule 14 (LOGICALEXPRESSION -> CALCLOGICALEXPR ( LOGICALEXPRESSION , EXPRESSION , EXPRESSION ) .)
+
+
+state 93
+
+    (26) EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION ) .
+
+    ,               reduce using rule 26 (EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+    )               reduce using rule 26 (EXPRESSION -> INSTR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+
+
+state 94
+
+    (22) EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION ) .
+
+    ,               reduce using rule 22 (EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+    )               reduce using rule 22 (EXPRESSION -> CALCEXPR ( EXPRESSION , EXPRESSION , EXPRESSION ) .)
+
+
+state 95
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent . NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    NL              shift and go to state 96
+
+
+state 96
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL . INSTRUCTIONS_SET BLOCK_END remove_indent
+    (2) INSTRUCTIONS_SET -> . INSTRUCTION NL
+    (3) INSTRUCTIONS_SET -> . INSTRUCTIONS_SET INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    INSTRUCTIONS_SET               shift and go to state 97
+    INSTRUCTION                    shift and go to state 3
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 97
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET . BLOCK_END remove_indent
+    (3) INSTRUCTIONS_SET -> INSTRUCTIONS_SET . INSTRUCTION NL
+    (4) INSTRUCTION -> . INSTR ( EXPRESSION , EXPRESSION , EXPRESSION )
+    (5) INSTRUCTION -> . IF_STATEMENT
+    (6) INSTRUCTION -> . WHILE_STATEMENT
+    (7) INSTRUCTION -> . OUTPUT ( EXPRESSION )
+    (18) IF_STATEMENT -> . IF IF_BODY
+    (17) WHILE_STATEMENT -> . WHILE LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent
+
+    BLOCK_END       shift and go to state 98
+    INSTR           shift and go to state 4
+    OUTPUT          shift and go to state 7
+    IF              shift and go to state 8
+    WHILE           shift and go to state 9
+
+    INSTRUCTION                    shift and go to state 10
+    IF_STATEMENT                   shift and go to state 5
+    WHILE_STATEMENT                shift and go to state 6
+
+state 98
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END . remove_indent
+    (29) remove_indent -> .
+
+    NL              reduce using rule 29 (remove_indent -> .)
+
+    remove_indent                  shift and go to state 99
+
+state 99
+
+    (21) IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent .
+
+    NL              reduce using rule 21 (IF_BODY -> LOGICALEXPRESSION : add_indent NL INSTRUCTIONS_SET remove_indent ELSE : add_indent NL INSTRUCTIONS_SET BLOCK_END remove_indent .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: reduce/reduce conflict in state 43 resolved using rule (LOGICALEXPRESSION -> INTNUMBER)
+WARNING: rejected rule (EXPRESSION -> INTNUMBER) in state 43
+WARNING: reduce/reduce conflict in state 44 resolved using rule (LOGICALEXPRESSION -> FLOATNUMBER)
+WARNING: rejected rule (EXPRESSION -> FLOATNUMBER) in state 44
+WARNING: reduce/reduce conflict in state 45 resolved using rule (LOGICALEXPRESSION -> TEXT)
+WARNING: rejected rule (EXPRESSION -> TEXT) in state 45

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="383911c9-06a3-4c3f-a3a5-38d3a2391045" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f10.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f11.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f12.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f13.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f20.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f21.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f22.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f23.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f30.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f31.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f32.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f33.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f40.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f41.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f42.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f43.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f50.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f51.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f52.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f53.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f60.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f61.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f62.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/f63.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datfiles/xmxp2.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tiny_gp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zad1.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GB1vwrLEfOFBqRBHxgBL7NlYGG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/kasia/OneDrive/Pulpit/kompilatorki_java",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kasia\OneDrive\Pulpit\genetyczne\zad1\zad1\datfiles" />
+      <recent name="C:\Users\kasia\OneDrive\Pulpit\genetyczne\zad1\zad1\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="zad1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="383911c9-06a3-4c3f-a3a5-38d3a2391045" name="Changes" comment="" />
+      <created>1665847400242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665847400242</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
