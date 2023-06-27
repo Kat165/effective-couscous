@@ -1,0 +1,144 @@
+{
+   "data": [
+      {
+         "path": [
+            {
+               "lon": 19.909718523873615,
+               "lat": 50.068167559992204,
+               "alt": 3.0,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "name": "a",
+         "transmissions": [
+            {
+               "data": "packet_content",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "b"
+            }
+         ],
+         "id": 131006069824810280
+      },
+      {
+         "path": [
+            {
+               "lat": 50.0839175599922,
+               "lon": 19.899708523873613,
+               "alt": 3.0,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "data": "packet_content",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "b"
+            }
+         ],
+         "name": "c",
+         "id": 131006069824810282
+      },
+      {
+         "path": [
+            {
+               "lat": 50.0827975599922,
+               "lon": 19.917318523873615,
+               "alt": 3.0,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "data": "packet_content",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "b"
+            }
+         ],
+         "name": "d",
+         "id": 131006069824810283
+      },
+      {
+         "path": [
+            {
+               "lat": 50.0779175599922,
+               "lon": 19.889918523873614,
+               "alt": 3.0,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "data": "packet_content",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "b"
+            }
+         ],
+         "name": "e",
+         "id": 131006069824810284
+      },
+      {
+         "path": [
+            {
+               "lat": 50.0756175599922,
+               "lon": 19.919918523873616,
+               "alt": 3.0,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "data": "packet_content",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "b"
+            }
+         ],
+         "name": "h",
+         "id": 131006069824810287
+      },
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.905853,
+               "lat": 50.078181
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "data": "packet_content",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "b"
+            }
+         ],
+         "name": "center",
+         "id": 199233290262088166
+      },
+      {
+         "tx_power": 14.0,
+         "transmissions": [],
+         "name": "g",
+         "path": [
+            {
+               "lon": 19.892998523873615,
+               "alt": 2.0,
+               "time": 0.0,
+               "lat": 50.0709175599922
+            }
+         ],
+         "id": 348589172583100954
+      }
+   ]
+}

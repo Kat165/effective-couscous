@@ -1,0 +1,115 @@
+{
+   "data": [
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.869289,
+               "lat": 50.069145
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "interval": 1300.0,
+               "length": 10.0,
+               "data": "lll",
+               "destination": "f"
+            }
+         ],
+         "name": "a",
+         "id": 147861516021343582
+      },
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.875813,
+               "lat": 50.069145
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [{
+               "interval": 1300.0,
+               "length": 10.0,
+               "data": "lll",
+               "destination": "all"
+            }],
+         "name": "b",
+         "id": 216346015746107596
+      },
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.881306,
+               "lat": 50.069145
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [{
+               "interval": 1300.0,
+               "length": 10.0,
+               "data": "lll",
+               "destination": "all"
+            }],
+         "name": "c",
+         "id": 212849265359937818
+      },
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.885941,
+               "lat": 50.069145
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [{
+               "interval": 1300.0,
+               "length": 10.0,
+               "data": "lll",
+               "destination": "all"
+            }],
+         "name": "d",
+         "id": 188150722736275519
+      },
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.891605,
+               "lat": 50.069145
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [{
+               "interval": 1300.0,
+               "length": 10.0,
+               "data": "lll",
+               "destination": "all"
+            }],
+         "name": "e",
+         "id": 260638788385331261
+      },
+      {
+         "path": [
+            {
+               "time": 0.0,
+               "alt": 2.0,
+               "lon": 19.897785,
+               "lat": 50.069145
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [],
+         "name": "f",
+         "id": 245159664947766233
+      }
+   ]
+}

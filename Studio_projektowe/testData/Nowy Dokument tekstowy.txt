@@ -1,0 +1,109 @@
+{
+   "data": [
+      {
+         "path": [
+            {
+               "lon": 19.90674912815427,
+               "alt": 1.5,
+               "lat": 50.070749606821,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "name": "d13",
+         "transmissions": [],
+         "id": 185522053013714096
+      },
+      {
+         "path": [
+            {
+               "lon": 19.9155651840895,
+               "alt": 3.0,
+               "lat": 50.065607816004636,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "name": "alfa",
+         "transmissions": [],
+         "id": 254802095481912302
+      },
+      {
+         "path": [
+            {
+               "lon": 19.909718523873615,
+               "alt": 1.5,
+               "lat": 50.060667559992204,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "name": "blonia",
+         "transmissions": [
+            {
+               "data": "XD",
+               "length": 10.0,
+               "interval": 1500.0,
+               "destination": "all"
+            }
+         ],
+         "id": 186137163070598272
+      },
+      {
+         "path": [
+            {
+               "lat": 50.070749606821,
+               "alt": 6.0,
+               "lon": 19.909718523873615,
+               "time": 0.0
+            }
+         ],
+         "tx_power": 14.0,
+         "transmissions": [
+            {
+               "length": 10.0,
+               "destination": "all",
+               "data": "ccc",
+               "interval": 1300.0
+            }
+         ],
+         "name": "aaa",
+         "id": 131006069824810280
+      },
+      {
+         "name": "test",
+         "tx_power": 14.0,
+         "path": [
+            {
+               "lat": 50.090749606821,
+               "lon": 19.90774912815427,
+               "time": 0.0,
+               "alt": 4.0
+            }
+         ],
+         "transmissions": [
+            {
+               "length": 10.0,
+               "interval": 1300.0,
+               "data": "lll",
+               "destination": "all"
+            }
+         ],
+         "id": 298507617175093214
+      },
+      {
+         "tx_power": 14.0,
+         "transmissions": [],
+         "name": "bbb",
+         "path": [
+            {
+               "lat": 50.070749606821,
+               "time": 0.0,
+               "lon": 19.909518523873615,
+               "alt": 6.0
+            }
+         ],
+         "id": 286539917625825303
+      }
+   ]
+}

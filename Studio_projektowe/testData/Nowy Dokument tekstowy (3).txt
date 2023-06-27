@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "alfa",
+      "tx_power": 14,
+      "path": [
+        {
+          "time": 0,
+          "lat": 50.065607816004636,
+          "lon": 19.9155651840895,
+          "alt": 3
+        }
+      ],
+      "transmissions": [
+        {
+          "data": "XD",
+          "interval": 1200,
+          "length": 15,
+          "destination": "all"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "d13",
+      "tx_power": 14,
+      "path": [
+        {
+          "time": 0,
+          "lat": 50.070749606821,
+          "lon": 19.90674912815427,
+          "alt": 1.5
+        }
+      ],
+      "transmissions": [
+      ]
+    },
+    {
+      "id": 3,
+      "name": "blonia",
+      "tx_power": 14,
+      "path": [
+        {
+          "time": 0,
+          "lat": 50.060667559992204,
+          "lon": 19.909718523873615,
+          "alt": 1.5
+        }
+      ],
+      "transmissions": [
+        {
+          "data": "XD",
+          "interval": 1500,
+          "length": 10,
+          "destination": "all"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "aaa",
+      "tx_power": 14,
+      "path": [
+        {
+          "time": 0,
+          "lat": 50.069667559992204,
+          "lon": 19.949718523873615,
+          "alt": 1.5
+        }
+      ],
+      "transmissions": [
+        {
+          "data": "data",
+          "interval": 1000,
+          "length": 10,
+          "destination": "all"
+        }
+      ]
+    }
+  ]
+}
