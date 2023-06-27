@@ -1,0 +1,26 @@
+ {
+    "Produkty":[
+        {
+        "type":"Samochody",
+        "items":["BMW","Ferrari", "Audi"]
+        },
+        {
+            "type":"Słodycze",
+            "items":["cukierki", "lizaki", "czekolada"]
+            },
+            
+        {
+            "type":"Elektronika",
+            "items":["laptop", "telefon", "smartwatch", "telewizor"]
+            },
+            
+        {
+            "type":"Ubrania",
+            "items":["buty", "spodnie", "kurtka", "czapka", "szalik", "skarpetki"]
+            },
+        {
+            "type":"Owoce",
+            "items":["jabłka", "gruszki", "śliwki"]
+        }
+    ]
+ }

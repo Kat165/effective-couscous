@@ -1,0 +1,321 @@
+body{
+    background-color: #00203fff;
+}
+.container{
+    display: grid;
+    height: 97vh;
+
+    grid-template-rows: auto auto 1fr auto auto auto;
+    gap: 24px;
+}
+/*  HEADER */
+.header{
+    border: 2px solid orange;
+    border-radius: 10px;
+    background-color: rgb(19, 71, 48);
+}
+/* NAVIGATION */
+.navigation{
+    border: 2px solid orange;
+    border-radius: 10px;
+    background-color: rgb(19, 71, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/* MAIN */
+.main{
+    border: 2px solid orange;
+    border-radius: 10px;
+    background-color: rgb(19, 71, 48);
+}
+
+.tekst{
+    border-radius: 10px;
+    background-color: gainsboro;
+    padding: 10px;
+    border: 2px solid blue;
+    display: grid;
+    gap: 5px;
+    grid-template-areas: 
+    "photo header header"
+    "photo tekst tekst";
+
+    grid-template-rows: auto auto;
+    margin: 10px;
+}
+
+.smallheader{
+    grid-area: header;
+}
+
+.lore{
+    grid-area: tekst;
+}
+
+.photo1{
+    grid-area: photo;
+    background-image: url("img/cat1.jpeg");
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+    height: 100px;
+    width: 100px;
+}
+
+.photo2{
+    grid-area: photo;
+    background-image: url("img/cat2.jpg");
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+    height: 100px;
+    width: 100px;
+}
+
+.photo3{
+    grid-area: photo;
+    background-image: url("img/cat1.jpeg");
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+    height: 100px;
+    width: 100px;
+}
+
+.photo4{
+    grid-area: photo;
+    background-image: url("img/cat2.jpg");
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+    height: 100px;
+    width: 100px;
+}
+
+.photo5{
+    grid-area: photo;
+    background-image: url("img/cat1.jpeg");
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+    height: 100px;
+    width: 100px;
+}
+
+.photo6{
+    grid-area: photo;
+    background-image: url("img/cat2.jpg");
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+    height: 100px;
+    width: 100px;
+}
+
+.formularz{
+    margin: 10px;
+    height: fit-content;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-image: url("img/forest.jpg");
+    background-size: cover;
+    padding: 10px;
+}
+
+.form{
+    padding: 10px;
+}
+
+.bg1{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+h2{
+    color: green;
+    text-transform: capitalize;
+    font-family: sans-serif;
+}
+
+input#name{
+    padding: 7px;
+}
+
+.button{
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: green;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar{
+    
+    border-radius: 10px;
+    background-color: rgb(19, 71, 48);
+    border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+}
+
+.wizytowka{
+    border-radius: 10px;
+    background-color: gainsboro;
+    border: 2px solid green;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar{
+    position: relative;
+    max-height: 100px;
+    width: auto;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.sidebar p{
+    padding: 10px;
+}
+
+
+/* ADS */
+.ads{
+    border-radius: 10px;
+    background-color: rgb(19, 71, 48);
+    border: 2px solid orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+/* FOOTER*/
+.footer{
+    
+    border-radius: 10px;
+    background-color: rgb(19, 71, 48);
+    border: 2px solid orange;
+}
+
+@media(min-width: 720px){
+    .container{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: auto auto 1fr auto;
+    }
+    
+    .header{
+        border: 2px solid orange;
+        grid-column: 1/span 12;
+    }
+    
+    .navigation{
+        border: 2px solid orange;
+        grid-column: 1/span 12;
+    }
+    
+    .main{
+        border: 2px solid orange;
+        grid-column: 3/span 10;
+    }
+    
+    .bg1{
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        clip-path: polygon(0 0, 92% 0, 75% 100%, 0% 100%);
+    }
+
+    .sidebar{
+        border: 2px solid orange;
+        grid-column: 1/span 2;
+        grid-row: 3;
+        display: inline;
+    }
+    
+    .avatar{
+        max-width: 80%;
+        height: auto;
+    }
+
+    .ads{
+        border: 2px solid orange;
+        grid-column: 1/span 2;
+        flex-direction: column;
+    }
+    
+    .footer{
+        border: 2px solid orange;
+        grid-column: 3/span 10;
+    }
+}
+
+@media(min-width: 1024px){
+    
+    
+    .navigation{
+        border: 2px solid orange;
+        grid-column: 3/span 8;
+    }
+    
+    .main{
+        border: 2px solid orange;
+        grid-column: 3/span 8;
+    }
+
+    .bg1{
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        clip-path: polygon(0 0, 92% 0, 75% 100%, 0% 100%);
+    }
+    
+    .sidebar{
+        border: 2px solid orange;
+        grid-row: 2/4;
+        display: inline;
+    }
+
+    .avatar{
+        max-width: 80%;
+        height: auto;
+    }
+    
+    .ads{
+        border: 2px solid orange;
+        grid-column: 11/span 2;
+        grid-row: 2/4;
+        
+        flex-direction: column;
+    }
+    
+    .footer{
+        border: 2px solid orange;
+        grid-column: 1/span 12;
+    }
+}

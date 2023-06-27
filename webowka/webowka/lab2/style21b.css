@@ -1,0 +1,32 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.box div{
+border: 1px;
+padding: 10px;
+}
+
+.one{
+  background-color: aquamarine;
+}
+
+.two{
+  flex: 1;
+  background-color: cadetblue;
+  align-self: flex-start;
+}
+
+.three{
+  flex: 1;
+  background-color: cornsilk;
+  align-self: center;
+}
+
+.four{
+  flex: 1;
+  background-color: coral;
+  align-self: start;
+}

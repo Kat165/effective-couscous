@@ -1,0 +1,49 @@
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#addToList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px;
+    border-color: black;
+}
+
+#nrtel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75px;
+    width: auto;
+    min-width: 100px;
+}
+
+#name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75px;
+    width: auto;
+    min-width: 100px;
+    padding: 10px;
+}
+
+#addbtn{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    width: auto;
+    min-width: 100px;
+    background-color: aquamarine;
+    padding: 10px;
+}

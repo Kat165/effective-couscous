@@ -1,0 +1,5 @@
+{
+    "Warzywa": ["cukinia", "cebula", "ziemniak"],
+    "Owoce": ["banan", "jabłko", "cytryna"],
+    "Napoje": ["woda", "sok", "herbata"]
+}

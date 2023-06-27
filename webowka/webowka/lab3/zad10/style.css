@@ -1,0 +1,242 @@
+body {
+  background-color: gray;
+  /*display: grid;
+  grid-template-columns: 30vw 10vw 30px 30px 30px 33px;
+  grid-template-rows: 5vh 40vh 33px;*/
+  display: grid;
+  grid-template-areas: "page select"
+  "page select";
+  /*height: 50vh;
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 25vh;*/
+  height: 97vh;
+  grid-template-columns: auto auto;
+  gap: 24px;
+}
+
+.select{
+  margin: 10px;
+  padding: 20px;
+  background-color: aqua;
+  grid-area: select;
+  display: grid;
+  /*grid-template-columns: 30vw 10vw 30px 30px 30px 30px 33px;
+  grid-template-rows: 5vh 40vh 33px;*/
+  grid-template-columns: 1fr auto auto auto auto auto auto;
+  grid-template-rows: auto 1fr auto auto;
+}
+
+:root {
+    --filter: hue-rotate(0deg)
+  }
+
+  #button2:checked ~ #page {
+    --filter: hue-rotate(120deg)
+  }
+  
+  #button3:checked ~ #page {
+    --filter: grayscale(1)
+  }
+
+  #button4:checked ~ #page {
+    --filter: hue-rotate(270deg)
+  }
+
+  #button5:checked ~ #page {
+    --filter: hue-rotate(150deg)
+  }
+  
+  
+  .button {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    /* grid-column-start: 2 / span 5;
+    grid-row-start: 2; */
+  }
+  
+  .buttonlabel {
+    cursor: pointer;
+    height: auto;
+    font-size: 24px;
+  }
+  
+  #page {
+    background-color: blueviolet;
+    grid-area: page;
+    filter: var(--filter);
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  
+  #content {
+    /* margin: auto;
+    max-width: 60ch;
+    padding: 2ch; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  /* a {
+    color: var(--theme-color);
+  } */
+
+  #but{/*
+    height: auto;
+    width: 25vw;*/
+    transform: rotate(-20deg);
+    height: 350px;
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 5vh;
+    align-self: center;
+    /*justify-self: flex-end;*/
+    justify-self: center;
+    margin-right: 1vw;
+  }
+
+  #bgimg{
+    margin-right: 1vw;
+    /*
+    width: 18vw;
+    height: 50vh;
+    justify-self: flex-end;*/
+    height: 450px;
+    width: 450px;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #button1{
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  #button2{
+    grid-column: 3;
+    grid-row: 4;
+  }
+
+  #button3{
+    grid-column: 4;
+    grid-row: 4;
+  }
+
+  #button4{
+    grid-column: 5;
+    grid-row: 4;
+  }
+
+  #button5{
+    grid-column: 6;
+    grid-row: 4;
+  }
+
+  #label1{
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  #label2{
+    grid-column: 3;
+    grid-row: 4;
+  }
+
+  #label3{
+    grid-column: 4;
+    grid-row: 4;
+  }
+
+  #label4{
+    grid-column: 5;
+    grid-row: 4;
+  }
+
+  #label5{
+    grid-column: 6;
+    grid-row: 4;
+  }
+
+  #color_text{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 3;
+    align-self: center;
+    justify-self: flex-end;
+    font-size: large;
+  }
+
+  #model_text{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row: 1;
+    justify-self: flex-start;
+    align-self: flex-start;
+    font-size: x-large;
+  }
+
+  #description_text{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row: 2;
+    align-self: center;
+    font-size: auto;
+  }
+
+  p{
+    border-bottom: 1px solid gray;
+  }
+/*
+  @media(max-width:900px){
+    body{
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-template-columns: auto;
+    }
+
+    .select{
+      grid-row: 2;
+      grid-column: 1;
+      
+    }
+    #page{
+      grid-row: 1;
+      grid-column: 1;
+      
+    }
+
+    #bgimg{
+      height: 350px;
+      width: 250px;
+    }
+    #but{
+      height: 250px;
+      
+      transform: rotate(-20deg);
+    }
+
+    :root {
+      --filter: hue-rotate(0deg)
+    }
+  
+    #button2:checked ~ #page {
+      --filter: hue-rotate(120deg)
+    }
+    
+    #button3:checked ~ #page {
+      --filter: grayscale(1)
+    }
+  
+    #button4:checked ~ #page {
+      --filter: hue-rotate(270deg)
+    }
+  
+    #button5:checked ~ #page {
+      --filter: hue-rotate(150deg)
+    }
+  }*/

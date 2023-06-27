@@ -1,0 +1,6 @@
+{
+   "Warzywa": ["marchewka", "ceubla", "ziemniak"],
+   "Owoce": ["mandarynka", "marakuja", "cytryna"],
+   "Napoje": ["kawa", "sprite", "herbata"],
+   "Nabiał": ["mleko", "ser", "jogurt"]
+}

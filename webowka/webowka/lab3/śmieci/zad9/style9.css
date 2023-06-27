@@ -1,0 +1,52 @@
+.body{
+    background-color: blueviolet;
+    
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    background-color: rgb(36, 41, 45);
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-between;
+    height: 60px;
+    
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    width: 800px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: flex-end;
+}
+
+.name{
+    background-color: rgb(40, 131, 206);
+    color: yellow;
+    font-size: 20px;
+    font-family:cursive;
+    padding: 5px;
+    text-align:center;
+}
+
+p{
+    background-color: brown;
+    color: aliceblue;
+    padding: 5px;
+    text-align: center
+}
+
+@media only screen and (max-width: 800px) {
+    
+}
+

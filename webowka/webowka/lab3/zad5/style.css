@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+div{
+    width: 20vw;
+    transition: 1s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    min-height: 100vh;
+}
+
+div:hover{
+    transition: 1s;
+    width: 75vw;
+}

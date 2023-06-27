@@ -1,0 +1,48 @@
+.box {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+  }
+  
+  .box div{
+  border: 1px;
+  padding: 10px;
+  }
+  
+  .one{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+  }
+  
+  .two{
+    
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+    align-self: flex-start;
+  }
+  
+  .three{
+    
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    align-self: center;
+  }
+  
+  .four{
+    
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+    align-self: start;
+  }
+
+  .five{
+    
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    align-self: start;
+  }

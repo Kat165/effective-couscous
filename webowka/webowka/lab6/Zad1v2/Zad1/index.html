@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+
+ <title>Zadanie 1</title>
+</head>
+<body>
+  <div class="boxs">
+    <div class="box1" data-points="5" data-color="gray">
+      <div class="box2" data-points="2" data-color="red" data-threshold="30">
+        <div class="box3" data-points="1" data-color="yellow" data-threshold="50">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="menu">
+        <li class="menu-item">
+          <button class="but but-startpropagation">
+            <span>Start propagation</span>
+          </button>
+        </li>
+        <li class="menu-item">
+          <button class="but but-stoppropagation">
+            <span>Stop propagation</span>
+          </button>
+        </li>
+        <li class="menu-item">
+          <button class="but but-reset">
+            <span>Reset</span>
+          </button>
+        </li>
+    </ul>
+
+    <section class="message">
+        <header class="message-header">
+
+          <div class="counter">
+            <p class="point">0</p>
+          </div>
+        </header>
+
+        <div class="message-wrapper">
+          <ul class="message-list message-list-initial">
+            <li class="message">Żółty box doda 1 pkt</li>
+            <li class="message">Czerwony box doda 2 pkt</strong></li>
+            <li class="message">Szary box doda 5 pkt</strong></li>
+            <hr>
+          </ul>
+
+          <ul class="message-list message-list-added">
+          </ul>
+        </div>
+      </section>
+
+</body>
+</html>

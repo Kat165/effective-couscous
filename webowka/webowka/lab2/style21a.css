@@ -1,0 +1,33 @@
+.box {
+    display: flex;
+  }
+  
+  .box div{
+  border: 1px;
+  padding: 10px;
+  }
+  
+  .one{
+    width: 250px;
+    height: 800px;;
+    background-color: aquamarine;
+  }
+  
+  .two{
+    width: 250px;
+    height: 100%;
+    background-color: cadetblue;
+  }
+  
+  .three{
+    width: 250px;
+    height: 100%;
+    align-self: center;
+    background-color: cornsilk;
+  }
+  
+  .four{
+    width: 250px;
+    height: 100%;
+    background-color: coral;
+  }
